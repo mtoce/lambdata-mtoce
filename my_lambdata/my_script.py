@@ -1,15 +1,10 @@
 # my_lambdata/my_script.py
 
-import pandas
+import pandas as pd
+import datetime
 
-from my_lambdata.my_mod import enlarge
+from my_lambdata.mod1 import convert_split_dates
 
-print("HELLO WORLD")
+df = pd.read_csv('https://raw.githubusercontent.com/mtoce/Build2-Project/master/astros_bangs_20200127.csv')
 
-df = pandas.DataFrame({"state": ["CT", "CO", "CA", "TX"]})
-print(df.head())
-
-print("-----------------")
-x = 5
-print("NUMBER", x)
-print("ENLARGED NUMBER", enlarge(x)) # invoking our function!!
+convert_split_dates(df, df['game_date'])
