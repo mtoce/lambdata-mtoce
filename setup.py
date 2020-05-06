@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="lambdata-mtoce",  # the name that you will install via pip
-    version="1.0.1",
+    version="1.0.2",
     author="Michael Toce",
     author_email="mtoce@villanova.edu",
     description="A package of helper functions!",
