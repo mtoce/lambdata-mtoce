@@ -12,7 +12,7 @@ class c_matrix():
     # define that creates the main array we 
     # will use for the rest of our class.methods()
 
-    def confusion_matrix(self, y_true, y_pred):
+    def confusion_matrix(self):
         '''
         Prints Confusion Matrix of true and predicted arrays.
 
@@ -24,18 +24,18 @@ class c_matrix():
         dataframe of confusion matrix with actual / predicted labels
         '''
         # defines X, the shape of true_label_array
-        X = len(np.unique(y_true))  # Number of classes
+        X = len(np.unique(self.y_true))  # Number of classes
         # creates zeroes array with shape length X above
         result = np.zeros((X, X))
         # creates labels list with unique values of true_label_array
-        labels = np.unique(y_true)
+        labels = np.unique(self.y_true)
         # using list comprehension to create a columns_list from labels
         columns = [f'Predicted {label}' for label in labels]
         # using list comp. to create an index_list from labels
         index = [f'Actual {label}' for label in labels]
         # create the confusion matrix array by indexing into the arrays
-        for i in range(len(y_true)):
-            result[y_true[i]][y_pred[i]] += 1
+        for i in range(len(self.y_true)):
+            result[self.y_true[i]][self.y_pred[i]] += 1
         # change type of result to a DF
         result = pd.DataFrame((result), index=index, columns=columns)
 
@@ -45,6 +45,6 @@ class c_matrix():
 if __name__ == "__main__":
     y_actual = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
     y_predicted = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
-    cm = c_matrix(y_true=y_actual, y_pred=y_predicted)
+    cm = c_matrix()
     cm2 = cm.confusion_matrix(y_true=y_actual, y_pred=y_predicted)
     print(cm2)
