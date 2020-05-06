@@ -18,6 +18,7 @@ def convert_split_dates(X, column):
         X['date_year'] = X[column].dt.year
         X['date_month'] = X[column].dt.month
         X['date_day'] = X[column].dt.day
+        X['date_hour'] = X[column].dt.hour
     else:
        print("The type of your column is not an object, datetime, or timestamp.")
 
