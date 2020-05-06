@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 def add_column(X, new_feature, new_feature_name):
     '''
     Takes list and converts to series and adds as column to dataframe.

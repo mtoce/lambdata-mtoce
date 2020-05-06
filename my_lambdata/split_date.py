@@ -1,6 +1,7 @@
 import pandas as pd
 import datetime
 
+
 def convert_split_dates(X, column):
     '''
     Converts an object column into a datetime dtype.
@@ -8,7 +9,7 @@ def convert_split_dates(X, column):
     Input: dataframe, column of dataframe you plan to convert / create new columns with
     Output: dataframe with new columns
     '''
-    
+
     X = X.copy()
 
     # create a boolean index to see if our column is the correct type
@@ -20,6 +21,6 @@ def convert_split_dates(X, column):
         X['date_day'] = X[column].dt.day
         X['date_hour'] = X[column].dt.hour
     else:
-       print("The type of your column is not an object, datetime, or timestamp.")
+        print("The type of your column is not an object, datetime, or timestamp.")
 
     return X

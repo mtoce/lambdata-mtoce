@@ -4,7 +4,9 @@ from pandas import DataFrame
 
 # df = pd.DataFrame()
 
-#pd.DataFrame
+# pd.DataFrame
+
+
 def add_state_names(my_df):
     '''
     Converts a dataframe with a column of state abbreviations, adding corresponding column of state names
@@ -20,7 +22,8 @@ def add_state_names(my_df):
 
     new_frame = my_df.copy()
     # need list or dict with the abbrev/name mappings
-    names_map = {"CA": "California", "CO": "Colorado", "CT": "Connecticut", "DC": "District of Columbia", "TX": "Texas"}
+    names_map = {"CA": "California", "CO": "Colorado",
+                 "CT": "Connecticut", "DC": "District of Columbia", "TX": "Texas"}
 
     # create a new column which maps the existing column using our names map
     # https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.map.html
@@ -30,12 +33,10 @@ def add_state_names(my_df):
 
     return new_frame
 
+
 if __name__ == "__main__":
-    df = DataFrame({"abbrev":["CA", "CO", "CT", "DC", "TX"]})
+    df = DataFrame({"abbrev": ["CA", "CO", "CT", "DC", "TX"]})
     print(df.head())
 
     df2 = add_state_names(df)
     print(df2.head())
-
-    
-
