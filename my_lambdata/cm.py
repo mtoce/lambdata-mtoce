@@ -2,6 +2,7 @@
 import numpy as np
 import pandas as pd
 import autopep8
+#from scikit.learn import confusion_matrix
 
 
 class c_matrix():
@@ -41,10 +42,11 @@ class c_matrix():
 
         return result
 
+    #def precision(self):
 
 if __name__ == "__main__":
-    y_actual = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
-    y_predicted = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
-    cm = c_matrix()
-    cm2 = cm.confusion_matrix(y_true=y_actual, y_pred=y_predicted)
-    print(cm2)
+    # y_actual = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
+    # y_predicted = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
+    cm = c_matrix(y_true=y_actual, y_pred=y_predicted)
+    cm1 = cm.confusion_matrix()
+    print(cm1)

@@ -12,4 +12,6 @@ FROM debian
 RUN apt-get update && \
   apt-get upgrade -y && \
   apt-get install python3-pip curl -y && \
-  pip3 install pipenv
+
+# pip install package from mtoce pypi acct
+RUN pip3 install -i https://test.pypi.org/simple/ lambdata-mtoce==1.0.2
